@@ -1,14 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>로또 번호 추첨기</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <div class="container">
+    <h1>🎰 로또 번호 추첨기</h1>
+    <p class="subtitle">행운의 번호 6개를 뽑아보세요!</p>
+
+    <div class="balls-container" id="balls-container">
+      <div class="ball-slot" id="slot-0">?</div>
+      <div class="ball-slot" id="slot-1">?</div>
+      <div class="ball-slot" id="slot-2">?</div>
+      <div class="ball-slot" id="slot-3">?</div>
+      <div class="ball-slot" id="slot-4">?</div>
+      <div class="ball-slot" id="slot-5">?</div>
+      <div class="plus">+</div>
+      <div class="ball-slot bonus" id="slot-bonus">?</div>
+    </div>
+
+    <div class="label-row">
+      <span class="label-main">당첨 번호</span>
+      <span class="label-bonus">보너스</span>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-draw" id="btn-draw" onclick="drawNumbers()">번호 추첨!</button>
+      <button class="btn-reset" onclick="resetNumbers()">초기화</button>
+    </div>
+
+    <div class="history-section" id="history-section" style="display:none;">
+      <h2>추첨 기록</h2>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
+
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
