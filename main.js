@@ -1,3 +1,20 @@
+function toggleTheme() {
+  const body = document.body;
+  const btn = document.getElementById('theme-toggle');
+  const isLight = body.classList.toggle('light');
+  btn.textContent = isLight ? '☀️' : '🌙';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+(function initTheme() {
+  const saved = localStorage.getItem('theme');
+  const btn = document.getElementById('theme-toggle');
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    if (btn) btn.textContent = '☀️';
+  }
+})();
+
 function getRangeClass(n) {
   if (n <= 10) return 'range-1';
   if (n <= 20) return 'range-2';
